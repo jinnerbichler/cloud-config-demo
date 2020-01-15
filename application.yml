@@ -1,2 +1,26 @@
 test:
   value: value from Spring Cloud configuration server
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  #        include: 'info, health, prometheus'
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    web:
+      server:
+        request:
+          autotime:
+            enabled: true
+          metric-name: http.server.requests
